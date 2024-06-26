@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>JCL | Home</title>
+    <style>
+        /* General reset and basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header and Navigation styles */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url('your-image-path.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        nav {
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .social-media a {
+            margin: 0 0.5rem;
+        }
+
+        /* Main Heading styles */
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        /* Carousel styles (basic example) */
+        .carousel {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .carousel div {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #fff;
+            margin: 0 5px;
+        }
+
+        /* Call to action button */
+        .btn-get-tickets {
+            background: #128c7e;
+            color: #fff;
+            padding: 0.8rem 1.6rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .btn-get-tickets:hover {
+            background: #0c7a6b;
+        }
+
+        /* Footer note */
+        .theatre-availability {
+            font-size: 0.8rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .btn-get-tickets {
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        a:hover, button:hover {
+            cursor: url('logo/bas.png'), auto; /* Custom cursor for the whole body */
+            animation: pulse 1s infinite; /* Apply an animation on hover */
+        }
+
+        /* Keyframes for the animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Custom cursor style */
+        .custom-cursor {
+            width: 20px; /* Width of the custom cursor image */
+            height: 20px; /* Height of the custom cursor image */
+            border-radius: 50%; /* Make it circular */
+            position: absolute;
+            pointer-events: none; /* Ignore the cursor itself for clicks */
+            z-index: 10000; /* Ensure it's above other items */
+            transition: transform 0.1s; /* Smooth transition for moving the cursor */
+            will-change: transform; /* Optimize the property for animations */
+        }
+
+        /* Add this to the <style> tag or a separate .css file */
+
+        /* Style for the navigation bar */
+        .navbar {
+            background: #333; /* Replace with your desired color */
+            overflow: hidden;
+            font-family: Arial, sans-serif; /* Use your preferred font */
+        }
+
+        /* Style for navigation items */
+        .navbar div {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* Style for the dropdown button */
+        .dropbtn {
+            background-color: #044b06; /* Replace with your desired color */
+            color: white;
+            padding: 16px;
+            font-size: 14px; /* Reduced from 16px to 14px */
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Style for the container <div> - needed to position the dropdown content */
+        .dropdown {
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9; /* Light grey background */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow for dropdown */
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px; /* Reduced font size for dropdown links */
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1; /* Light grey background on hover */
+        }
+
+        /* Arrow icon */
+        .arrow {
+            border: solid white;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 4px;
+            transition: transform 0.3s ease;
+            position: absolute;
+            right: 10px; /* Adjust as needed */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Change the background color of the dropdown button on hover */
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41; /* Darker shade of button color */
+        }
+
+        /* Rotate arrow when dropdown is shown */
+        .dropdown:hover .arrow {
+            transform: translateY(-50%) rotate(135deg);
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Clear floats */
+        .navbar::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Responsive styling */
+        @media screen and (max-width: 600px) {
+            .navbar div, .navbar div .dropbtn {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .navbar, .dropdown-content {
+                text-align: center;
+            }
+
+            .dropdown-content {
+                position: relative;
+            }
+        }
+
+        /* Style for the dropdown button */
+        .dropbtn {
+            background-color: #4CAF50; /* Replace with your desired color */
+            color: white;
+            padding: 16px;
+            padding-right: 40px; /* Increased padding to make space for the arrow */
+            font-size: 14px; /* Reduced from 16px to 14px */
+            border: none;
+            cursor: pointer;
+            position: relative;
+            display: inline-block; /* Ensures proper spacing and positioning */
+            text-align: left; /* Align text to the left */
+        }
+
+        /* Arrow icon */
+        .arrow {
+            border: solid white;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 4px;
+            transition: transform 0.3s ease;
+            position: absolute;
+            right: 10px; /* Adjusted to push the arrow to the far right */
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg); /* Arrow starts pointed right */
+            transform-origin: 50% 50%; /* Ensures rotation happens centrally */
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url('Images/Board_Room.jpg') repeat-x top left/cover; /* Adjust the URL to your landscape image or GIF */
+        }
+
+        nav {
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Added position relative for z-index */
+            z-index: 1; /* Added z-index to keep the navigation above the background */
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('Images/Board_Room.jpg') repeat-x top left/cover;
+            /* Linear gradient for transparent dark overlay */
+            /* Adjust the URL to your landscape image or GIF */
+        }
+
+        /* Adjust header background */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('Images/Board_Room.jpg') repeat-x top left/cover;
+            /* Linear gradient for transparent dark overlay */
+            /* Adjust the URL to your landscape image or GIF */
+        }
+
+        /* Adjust nav background */
+        nav {
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Added position relative for z-index */
+            z-index: 1; /* Added z-index to keep the navigation above the background */
+            background-color: #000; /* Set the background color to black */
+        }
+
+        nav img {
+            max-width: 70%; /* Adjust the maximum width of the logo */
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-left: auto; /* Push the search bar to the right */
+        }
+
+        .search-input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 3px;
+            margin-right: 0.5rem;
+        }
+
+        .search-button {
+            background-color: #128c7e;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #0c7a6b;
+        }
+
+        .social-media {
+            display: flex;
+            margin-bottom: 0.5rem; /* Adjust the space between social media icons and search bar */
+        }
+
+        .social-media a {
+            margin: 0 0.5rem; /* Adjust the space between social media icons */
+            display: inline-block;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-left: auto; /* Push the search bar to the right */
+        }
+
+        .search-input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 3px;
+            margin-right: 0.5rem;
+        }
+
+        .search-button {
+            background-color: #128c7e;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #0c7a6b;
+        }
+
+        .navigation-links {
+            display: flex;
+            margin-top: 0.5rem;
+        }
+
+        .navigation-link {
+            margin: 0 1rem;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navigation-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigation-link:hover {
+            color: #66c0f4; /* Change to your desired hover color */
+        }
+
+        .navigation-link:hover::after {
+            background-color: #66c0f4; /* Change to your desired hover color */
+        }
+
+        /* Style for navigation links */
+        .navigation-links {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem; /* Adjust top margin for spacing */
+        }
+
+        .navigation-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 1rem;
+        }
+
+        .navigation-links span {
+            color: #fff;
+            margin: 0 0.5rem; /* Adjust margin for the separator */
+        }
+
+        /* Adjust search bar styling */
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 3px;
+            margin-right: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            color: #fff; /* Text color */
+        }
+
+        .search-button {
+            background-color: #128c7e;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #0c7a6b;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu-right {
+            float: right;
+        }
+
+        .newsletter h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter form {
+            margin-bottom: 40px;
+        }
+
+        .newsletter label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .newsletter input[type="text"],
+        .newsletter input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #333;
+            border: none;
+            color: #fff;
+        }
+
+        .newsletter button {
+            background-color: #128C7E;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding-top: 50px; /* This adds space at the top of the container */
+        }
+
+        /* If you have a specific dropdown menu, add some space at the bottom of it as well */
+        .menu > ul {
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+
+        /* Other styles remain unchanged */
+
+        .newsletter {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .form-container {
+            flex-basis: 40%; /* Adjust this to suit your design */
+        }
+
+        .map-container {
+            flex-basis: 60%; /* Adjust this to suit your design */
+            /* Add styles for your map container here */
+            height: 300px; /* Example height */
+            background-color: #ddd; /* Example background color, replace with your map */
+        }
+
+        .newsletter input[type="text"],
+        .newsletter input[type="email"] {
+            width: 100%; /* You can reduce this if you want even smaller fields */
+            padding: 10px;
+            margin-bottom: 10px; /* Reduced margin */
+            background-color: #333;
+            border: none;
+            color: #fff;
+        }
+
+        .form-container {
+            flex-basis: 40%; /* Adjust this to suit your design */
+            margin-bottom: 20px; /* Add some bottom margin to create space */
+        }
+
+        .mapbox {
+            position: relative;
+            height: 400px;
+            width: 50%;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid var(--jet);
+            overflow: hidden;
+        }
+
+        .mapbox figure { height: 100%; }
+
+        .mapbox iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(1) invert(1);
+        }
+
+        /* Define a keyframe animation for zooming in the background */
+        @keyframes zoomBackground {
+            0% { background-size: 100% auto; }
+            100% { background-size: 110% auto; }
+        }
+
+        /* Apply the animation to the header */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0)), url('Images/Board_Room.jpg') repeat-x top left/cover;
+            /* Linear gradient for transparent dark overlay */
+            /* Adjust the URL to your landscape image or GIF */
+            padding: 1rem 0; /* Further reduce the padding to adjust the height of the black layer */
+            animation: zoomBackground 30s linear infinite alternate; /* Apply the animation to the background */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px; /* Reduced font size for dropdown links */
+            position: relative; /* Add position relative to allow absolute positioning of the rainbow underline */
+        }
+
+        .dropdown-content a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red); /* Rainbow underline */
+            transition: all 0.3s ease; /* Smooth transition for color change */
+            border-radius: 2px; /* Optional: Add border radius for the underline */
+            z-index: -1; /* Push the underline behind the text */
+        }
+
+        .dropdown-content a:hover::after {
+            width: 110%; /* Extend the underline on hover */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9; /* Light grey background */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow for dropdown */
+            z-index: 1;
+            columns: 2; /* Split dropdown options into two columns */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 5px; /* Adjust padding for better spacing */
+            text-decoration: none;
+            display: block;
+            font-size: 14px; /* Reduced font size for dropdown links */
+            column-span: all; /* Ensure each option spans across both columns */
+        }
+
+        /* Adjust width for better alignment of options */
+        .dropdown-content a:nth-child(even) {
+            margin-left: 10px; /* Add margin to even-numbered options */
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1; /* Light grey background on hover */
+        }
+
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 3px;
+            margin-right: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .search-button {
+            background-color: #128c7e;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #0c7a6b;
+        }
+
+        .trusted-statement {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .logos img {
+            width: 80px; /* Adjust the width of the logos as needed */
+            margin: 0 5px; /* Adjust the spacing between logos */
+        }
+
+        /* Animation for header text */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.2rem; /* Reduced from 2.5rem for slightly smaller text */
+            text-align: center;
+            margin-top: 3rem; /* Adjust this value as needed to move the text down */
+            margin-bottom: 2rem; /* Ensure some space remains below the text */
+            animation: fadeIn 1s ease-out;
+            color: #FFF; /* Keep the text color */
+            text-shadow:
+                -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                 1px 1px 0 #000,
+                -1px 1px 0 #000,
+                0px 1px 0 #000,
+                1px 0px 0 #000,
+                0px -1px 0 #000,
+                -1px 0px 0 #000; /* Keep the shadow for contrast */
+        }
+
+        .navbar.is-visible {
+            display: block; /* Or flex, depending on your layout */
+        }
+
+        header {
+            position: relative; /* Ensure the header has a relative position */
+        }
+
+        .hamburger-menu {
+            position: absolute; /* Position the menu absolutely within the header */
+            bottom: 10px; /* Adjust this value as needed to position from the bottom */
+            right: 10px; /* Adjust this value as needed to position from the right */
+            display: flex; /* To center the icon if it's in a flex container */
+            align-items: center; /* Center align the items vertically */
+            justify-content: center; /* Center align the items horizontally */
+            width: 40px; /* Width of the hamburger menu */
+            height: 40px; /* Height of the hamburger menu */
+            cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+            z-index: 1000; /* Ensure it's above other content */
+            border: 2px solid #fff; /* Outline color */
+            border-radius: 50%; /* Make it circular */
+            padding: 8px; /* Adjust padding to fit the icon inside the circle */
+            background-color: #000; /* Background color */
+            box-shadow: 0 0 8px #fff; /* Optional: add a shadow for a more pronounced effect */
+        }
+
+        /* Ensure the icon color contrasts well with the background */
+        .hamburger-menu i {
+            color: #fff; /* Adjust the color as needed */
+            font-size: 1.5rem; /* Adjust the size as needed */
+        }
+
+        /* Shade Effect Styles */
+        .shade-effect {
+            display: none; /* Hidden by default */
+            position: fixed; /* Use fixed positioning */
+            top: 0;
+            left: -100%; /* Start off-screen */
+            width: 100%;
+            height: 100%;
+            background-color: rgba(100, 100, 255, 0.2); /* Light blue, semi-transparent */
+            backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+            z-index: 2; /* Ensure it's above other content but below the modal close button */
+            transition: left 0.5s; /* Smooth transition for sliding effect */
+        }
+
+        .shade-content {
+            margin: 20px;
+            color: #fff; /* Text color */
+        }
+
+        .close-shade {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff; /* Adjust as necessary */
+            cursor: pointer;
+        }
+
+        /* Adjust the .is-visible class for the navigation */
+        .navbar.is-visible + .shade-effect {
+            display: block; /* Show the shade when navbar is visible */
+            left: 0; /* Slide into view */
+        }
+
+        .hamburger-menu.hide {
+            display: none; /* Hide the hamburger menu */
+        }
+
+        .btn-call-now {
+            font-family: 'Arial', sans-serif; /* Match the font to your website's font */
+            font-size: 1rem; /* Match to the size in the image, adjust as necessary */
+            color: #fff; /* Text color */
+            background: rgba(18, 140, 126, 0.4); /* Green background with transparency */
+            padding: 10px 20px; /* Padding around text */
+            border: 2px solid #fff; /* White border */
+            border-radius: 5px; /* Slight roundness to the corners */
+            text-decoration: none; /* No underline */
+            position: relative; /* Allows absolute positioning of pseudo-elements */
+            cursor: pointer; /* Cursor to indicate it's clickable */
+            backdrop-filter: blur(10px); /* Blur effect */
+            transition: all 0.3s ease; /* Transition for interactive states */
+        }
+
+        .btn-call-now::before,
+        .btn-call-now::after {
+            content: '|'; /* Pipe character */
+            color: #fff; /* White color */
+            position: absolute; /* Position absolutely inside the button */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Align to the exact center vertically */
+        }
+
+        .btn-call-now::before {
+            left: -10px; /* Position the pipe to the left outside the button */
+        }
+
+        .btn-call-now::after {
+            right: -10px; /* Position the pipe to the right outside the button */
+        }
+
+        .btn-call-now:hover {
+            background: rgba(18, 140, 126, 0.7); /* Darker background on hover */
+            color: #ffa10a; /* Change color on hover if needed */
+        }
+
+        .btn-call-now:hover::before,
+        .btn-call-now:hover::after {
+            color: #ffa10a; /* Change the pipe color on hover if needed */
+        }
+
+        .btn-call-now {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            /* ...other styles... */
+        }
+
+        .btn-call-now i {
+            margin-right: 0.5rem; /* Space between the icon and text */
+            /* If you need to adjust the size of the icon: */
+            /* font-size: 1rem; */
+        }
+
+        .theatre-availability {
+            font-size: 0.8rem;
+            margin-bottom: 1rem; /* Add bottom margin for space between text and button */
+            color: red; /* Keep the text color */
+            padding: 10px 20px; /* Padding around the text for better visibility */
+            background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white background */
+            border-radius: 10px; /* Rounded corners for the glass effect */
+            backdrop-filter: blur(10px); /* Blur effect for the glassy look */
+            border: 1px solid rgba(255, 255, 255, 0.18); /* Optional: a subtle border for more glassy effect */
+        }
+
+        .fa.fa-twitter::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    content: "";
+    background-color: currentColor;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+    mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+    background-position: center 3px;
+}
+
+
+.downloads {
+        background-color: #222;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+    }
+
+    .downloads h2 {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .downloads ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .downloads ul li {
+        margin: 0.5rem 0;
+    }
+
+    .downloads ul li a {
+        color: #66c0f4;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        padding: 0.5rem;
+        background-color: #333;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .downloads ul li a:hover {
+        background-color: #555;
+    }
+
+    body {
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #050505;
+}
+
+.navigation-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #044b06;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px #030303;
+}
+
+button:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px #666;
+    transform: translateY(-2px);
+}
+
+button:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+.slide-container {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transition: top 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-content {
+    font-size: 18px;
+    max-width: 80%;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.social-media {
+    display: flex;
+    margin-bottom: 0.5rem; /* Adjust the space between social media icons and search bar */
+    margin-right: auto; /* Push the social media icons to the left */
+    margin-left: 20px; /* Add margin to move the icons slightly away from the left */
+}
+
+.navigation-links {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem; /* Adjust top margin for spacing */
+    margin-left: auto; /* Push the navigation links to the right */
+}
+
+.navigation-links button {
+    margin-left: 10px; /* Adjust margin to add space between buttons */
+}
+
+.hamburger-menu {
+    position: absolute; /* Position the menu absolutely within the header */
+    top: 10px; /* Adjust this value as needed to position from the top */
+    right: 10px; /* Position the menu at the far right corner */
+    display: flex; /* To center the icon if it's in a flex container */
+    align-items: center; /* Center align the items vertically */
+    justify-content: center; /* Center align the items horizontally */
+    width: 40px; /* Width of the hamburger menu */
+    height: 40px; /* Height of the hamburger menu */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    z-index: 1000; /* Ensure it's above other content */
+    border: 2px solid #fff; /* Outline color */
+    border-radius: 0; /* Make it a box shape */
+    padding: 8px; /* Adjust padding to fit the icon inside the box */
+    background-color: #000; /* Background color */
+    box-shadow: 0 0 8px #fff; /* Optional: add a shadow for a more pronounced effect */
+}
+
+
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .popup h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .popup ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .popup ul li {
+            margin: 0.5rem 0;
+            cursor: pointer;
+        }
+
+        .popup ul li:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        .popup button {
+            background-color: #128c7e;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #0c7a6b;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <header>
+        <nav>
+            <a href="index.html"><img src="Logo/JCL.png" alt="Logo"></a>
+            <div class="social-media">
+                <a href="https://www.facebook.com/your-profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/your-profile" target="_blank"><i class="fa fa-twitter"></i>
+                <a href="https://www.instagram.com/your-profile" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.whatsapp.com/your-profile" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+</div>
+
+
+
+                <!-- Add more social media icons as needed -->
+            </div> 
+            
+            <div class="navigation-links">
+                <button id="whoAreWeBtn">Who Are We</button>
+                <span>|</span>
+                <button id="whatWeDoBtn">What We Do</button>
+            </div>
+            <div id="slideContainer" class="slide-container">
+                <div id="slideContent" class="slide-content"></div>
+            </div>
+            
+            <div class="search-container">
+                <div class="search">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                    <button class="search-button" id="searchButton">Search</button>
+                </div>
+                <div class="trusted-statement">Trusted by Clients within & Beyond the Borders</div>
+                <div class="logos">
+                    <img src="Clients/GRZ.png" alt="Logo 1">  
+                    <img src="Clients/bu.png" alt="Logo 2">
+                    <img src="Clients/PIA.png" alt="Logo 3">
+                    <!-- Add more logo images as needed -->
+                </div>
+            </div>
+            
+        </nav>
+        <ul class="navbar">
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i> <!-- Using Font Awesome, ensure you include the Font Awesome library if not already done -->
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Services
+                    <i class="arrow down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Jo/project_management.html">Project Management</a>
+                    <a href="Jo/business_development.html">Business Development</a>
+                    <a href="Jo/">Finance</a>
+                    <a href="Jo/">Human Resource</a>
+                    <a href="Jo/awareness_raising.html">Awareness Raising</a>
+                    <a href="Jo/proposal_development.html">Proposal Development</a>
+                    <a href="Jo/media_services.html">Media Services/Campaigns</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Industries
+                    <i class="arrow down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Jo/consumer_agriculture.html">Consumer & Agriculture</a>
+                    <a href="Jo/education.html">Education</a>
+                    <a href="Jo/government_public_services.html">Government & Public Services</a>
+                    <a href="Jo/ngos.html">Non-governmental Organizations</a>
+                    <a href="Jo/technology_media.html">Technology, Media & Telecommunications</a>
+                    <a href="Jo/financial_services.html">Financial Services</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Insights
+                    <i class="arrow down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Jo/strategy.html">Strategy</a>
+                    <a href="Jo/economy_society.html">Economy & Society</a>
+                    <a href="Jo/organization.html">Organization</a>
+                    <a href="Jo/people.html">People</a>
+                    <a href="Jo/technology.html">Technology</a>
+                    <a href="Jo/industries.html">Industries</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Team
+                    <i class="arrow down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Jo/leadership.html">Our Leadership</a>
+                </div>
+            </div>
+        </ul>
+
+        <div class="shade-effect">
+            <div class="shade-content">
+                <h2>Additional Content Information</h2>
+                
+                <section class="downloads">
+                    <h2>Downloadable Documents</h2>
+                    <ul>
+                        <li><a href="documents/company_profile.pdf" target="_blank">Company Profile</a></li>
+                        <li><a href="documents/project_portfolio.pdf" target="_blank">Project Portfolio</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <h1>Empowering Your Vision with Unmatched Expertise</h1>
+        <div class="carousel">
+            <!-- Carousel items -->
+        </div>
+        <p class="theatre-availability">[GET TO TALK]</p>
+        <a href="javascript:void(0);" class="btn-call-now" onclick="callNumber()"><i class="fas fa-phone"></i> CALL NOW</a>
+
+    <div class="container">
+        <header>
+            <nav class="menu">
+                <ul>
+                   
+                </ul>
+            </nav>
+        </header>
+
+        
+      
+        <div class="newsletter">
+            <div class="form-container">
+                <h1>Join to Our WhatsApp Channel</h1>
+                <form action="/subscribe" method="post">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Your Phone Number">
+                    <button type="submit">Join</button>
+                </form>
+                
+            </div>
+            <section class="mapbox" data-mapbox>
+                <figure>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53286.75981243011!2d28.41604285047974!3d-15.332436049834332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408837cedf9ac7%3A0x2de8b7c983db90b7!2sKenneth%20Kaunda%20International%20Airport!5e0!3m2!1sen!2szm!4v1696002253572!5m2!1sen!2szm"
+                        width="400" height="300" loading="lazy"></iframe>
+                </figure>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="popup-container" id="popupContainer">
+        <div class="popup">
+            <h2>Select the number to call:</h2>
+            <ul id="numberList"></ul>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+
+    <!-- Additional content -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <footer>
+        <p id="copyright"></p>
+        <p id="poweredBy"></p>
+    </footer>
+    
+    <script>
+        // Function to shuffle an array using Fisher-Yates algorithm
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Function to display shuffled logos
+        function displayShuffledLogos() {
+            const logosContainer = document.querySelector('.logos');
+            const logos = Array.from(logosContainer.children);
+            shuffleArray(logos); // Shuffle the logos randomly
+
+            // Clear existing logos
+            logosContainer.innerHTML = '';
+
+            // Append shuffled logos back to the container
+            logos.forEach(logo => {
+                logosContainer.appendChild(logo.cloneNode(true));
+            });
+        }
+
+        // Initial display of shuffled logos
+        displayShuffledLogos();
+
+        // Re-display shuffled logos every 5 seconds (adjust as needed)
+        setInterval(displayShuffledLogos, 1000);
+    </script>
+
+    <script>
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            var navigation = document.querySelector('.navbar');
+            var shadeEffect = document.querySelector('.shade-effect');
+
+            navigation.classList.toggle('is-visible');
+
+            // Toggle the shade effect based on the visibility of the navigation
+            shadeEffect.style.left = navigation.classList.contains('is-visible') ? '0' : '-100%';
+
+            // Toggle the hamburger menu icon and the "X" icon
+            if (navigation.classList.contains('is-visible')) {
+                this.innerHTML = '<i class="fas fa-times"></i>'; // Change to "X" icon
+            } else {
+                this.innerHTML = '<i class="fas fa-bars"></i>'; // Change back to hamburger icon
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all dropdown buttons
+            var dropdowns = document.getElementsByClassName("dropbtn");
+
+            // Loop through the buttons to add mouseover and mouseleave events
+            for (var i = 0; i < dropdowns.length; i++) {
+                dropdowns[i].addEventListener('mouseover', function() {
+                    // Close all open dropdowns
+                    closeAllDropdowns();
+
+                    // Open this dropdown
+                    var content = this.nextElementSibling;
+                    content.style.display = 'block';
+
+                    // Rotate the arrow icon
+                    this.children[0].style.transform = 'rotate(135deg)';
+                });
+            }
+
+            // Close dropdown when hovering over another part of the nav (excluding dropdown buttons and content)
+            document.querySelector('nav').addEventListener('mouseover', function(e) {
+                if (!e.target.matches('.dropbtn') && !e.target.matches('.dropdown-content') && !e.target.closest('.dropdown-content')) {
+                    closeAllDropdowns();
+                }
+            });
+        });
+
+        // Close all dropdowns function
+        function closeAllDropdowns() {
+            var dropdownContents = document.getElementsByClassName("dropdown-content");
+            var arrows = document.getElementsByClassName("arrow");
+            for (var i = 0; i < dropdownContents.length; i++) {
+                dropdownContents[i].style.display = 'none';
+                arrows[i].style.transform = 'rotate(45deg)';
+            }
+        }
+
+        // Close dropdown if clicking outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn') && !event.target.matches('.arrow')) {
+                closeAllDropdowns();
+            }
+        };
+    </script>
+
+    <script>
+
+// Function to create the directory structure
+function createStructure(basePath, structure) {
+    for (const name in structure) {
+        const content = structure[name];
+        const fullPath = path.join(basePath, name);
+
+        if (typeof content === 'object' && !Array.isArray(content)) {
+            if (!fs.existsSync(fullPath)) {
+                fs.mkdirSync(fullPath, { recursive: true });
+            }
+            createStructure(fullPath, content);
+        } else if (Array.isArray(content)) {
+            if (!fs.existsSync(fullPath)) {
+                fs.mkdirSync(fullPath, { recursive: true });
+            }
+            content.forEach(item => {
+                fs.writeFileSync(path.join(fullPath, item), '');
+            });
+        } else {
+            fs.writeFileSync(fullPath, content);
+        }
+    }
+}
+
+// Define the base path for the project
+const basePath = path.resolve(__dirname);
+
+// Create the project structure
+createStructure(basePath, projectStructure);
+
+    </script>
+
+    <script>
+document.getElementById('whoAreWeBtn').addEventListener('click', function() {
+    showSlide('We are a company dedicated to providing exceptional consultancy services in various industries including agriculture, education, governments, NGOs, telecom, finance and more. Our team of experts is committed to delivering high-quality solutions tailored to our clients needs.');
+});
+
+document.getElementById('whatWeDoBtn').addEventListener('click', function() {
+    showSlide('We provide a wide range of consultancy services including project management, business development, financial advisory, HR solutions, awareness campaigns, proposal development, and media services to help our clients achieve their goals efficiently and effectively.');
+});
+
+function showSlide(text) {
+    var slideContainer = document.getElementById('slideContainer');
+    var slideContent = document.getElementById('slideContent');
+    slideContent.innerHTML = text;
+    slideContainer.style.top = '0';
+}
+
+document.getElementById('slideContainer').addEventListener('click', function() {
+    this.style.top = '-100%';
+});
+
+
+
+    </script>
+
+
+<script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+        var input = document.getElementById('searchInput').value.toLowerCase();
+        var links = document.querySelectorAll('a, button'); // Select all links and buttons
+        var found = false;
+    
+        links.forEach(function(link) {
+            var text = link.textContent.toLowerCase();
+            if (text.includes(input)) {
+                found = true;
+                // Scroll to the link and highlight it
+                link.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                link.style.backgroundColor = 'yellow'; // Highlight the link
+    
+                // Optionally, open the link if it's an anchor tag
+                if (link.tagName === 'A') {
+                    window.location.href = link.href;
+                }
+            }
+        });
+    
+        if (!found) {
+            alert('Search term not found.');
+        }
+    });
+    
+    // Optionally, add an event listener for the Enter key
+    document.getElementById('searchInput').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            document.getElementById('searchButton').click();
+        }
+    });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var currentYear = new Date().getFullYear();
+            var companyName = "Jessin Consultancy Limited"; // Replace with your company name
+            var findatLink = "https://findat.netlify.app/"; // Replace with the actual URL of the Findat Consultants page
+            var copyrightText = `&copy; ${currentYear} ${companyName}. All rights reserved.`;
+            var poweredByText = `Powered by <a href="${findatLink}" target="_blank" style="color: #66c0f4; text-decoration: none;">Findat Consultants</a>.`;
+            
+            document.getElementById('copyright').innerHTML = copyrightText;
+            document.getElementById('poweredBy').innerHTML = poweredByText;
+        });
+        </script>
+
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to change the cursor to an open hand cursor on hover
+    function changeCursorToHand() {
+        this.style.cursor = 'grab'; // Use the 'grab' cursor for an open hand
+    }
+
+    // Function to revert the cursor back to default
+    function revertCursor() {
+        this.style.cursor = 'auto';
+    }
+
+    // Select all dropdown options, buttons, the Findat Consultants link, and the "CALL NOW" button
+    var elements = document.querySelectorAll('.dropdown-content a, button, a[href*="findat.netlify.app"], .btn-call-now');
+
+    // Add event listeners to each element
+    elements.forEach(function(element) {
+        element.addEventListener('mouseover', changeCursorToHand);
+        element.addEventListener('mouseout', revertCursor);
+    });
+});
+
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to handle form submission
+        function handleSubscription(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the form data
+            var name = document.getElementById('name').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+
+            // Check if the name and phone number are not empty
+            if (name && phoneNumber) {
+                // Redirect to WhatsApp channel link
+                var whatsappLink = 'https://whatsapp.com/channel/0029Vaiwwfr5K3zZznvf093D'; // Replace with your actual WhatsApp channel link
+                window.location.href = whatsappLink;
+            } else {
+                // Show an error message if fields are empty
+                alert('Please enter your name and phone number.');
+            }
+        }
+
+        // Attach the event listener to the form
+        document.querySelector('.newsletter form').addEventListener('submit', handleSubscription);
+    });
+</script>
+
+
+<script>
+    function callNumber() {
+        const numbers = [
+            "260967669184",
+            "260766809889",
+            "260976913843"
+        ];
+
+        const numberList = document.getElementById('numberList');
+        numberList.innerHTML = '';
+
+        numbers.forEach((number, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = number;
+            listItem.onclick = () => {
+                window.location.href = `tel:${number}`;
+            };
+            numberList.appendChild(listItem);
+        });
+
+        document.getElementById('popupContainer').style.display = 'flex';
+    }
+
+    function closePopup() {
+        document.getElementById('popupContainer').style.display = 'none';
+    }
+</script>
+
+
+
+    
+</body>
+</html>

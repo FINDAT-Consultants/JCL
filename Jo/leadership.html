@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Leadership | JCL</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            background: url('Images/City.avif') no-repeat center center/cover;
+            background-color: #0c0a0a;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+            z-index: -1;
+        }
+
+        header {
+            background: url('Images/Leadership.jpg') no-repeat center center/cover;
+            height: 50vh;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffffd7;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-right: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-info {
+            max-width: 600px;
+        }
+
+        .member-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #128c7e;
+        }
+
+        .member-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .member-info p {
+            line-height: 1.6;
+        }
+
+        .cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .cta a {
+            background-color: #128c7e;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta a:hover {
+            background-color: #0c7a6b;
+        }
+
+        @media (max-width: 768px) {
+            .team-member {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .team-member img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .member-info {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Leadership</h1>
+        <p>Meet the Team Driving Our Vision Forward</p>
+    </header>
+    <div class="container">
+        <div class="team-member">
+            <img src="Images/Team_Member1.jpg" alt="John Mwanza">
+            <div class="member-info">
+                <h2>John Mwanza</h2>
+                <h3>Chief Executive Officer</h3>
+                <p>John has over 20 years of experience in the industry, leading teams to success with his strategic vision and innovative approach. He oversees all departments, ensuring alignment with the company's goals and values.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="Images/Team_Member2.jpg" alt="Jane Smith">
+            <div class="member-info">
+                <h2>Timothy Chibbela</h2>
+                <h3>Chief Project Officer</h3>
+                <p>Timothy brings a wealth of project expertise, with a career spanning over 10 years in project management and planning. He leads the programs department, focusing on economic sustainable growth, social and governance of the company.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="Images/Team_Member3.jpg" alt="Simon John">
+            <div class="member-info">
+                <h2>Simon John</h2>
+                <h3>Forensic Data Analyst</h3>
+                <p>With a background in Forensic Accounting and Data management, Simon heads our financial technology department. He is dedicated to driving technological innovation and automating our financial infrastructure.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="Images/Team_Member4.jpg" alt="Esther Mwanza">
+            <div class="member-info">
+                <h2>Esther Mwanza</h2>
+                <h3>Human Resource</h3>
+                <p>Esther has a deep understanding of organizational development and talent management. She oversees the HR department, fostering a supportive and productive work environment for all employees.</p>
+            </div>
+        </div>
+     
+        
+</body>
+</html>
