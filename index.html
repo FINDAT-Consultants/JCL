@@ -170,6 +170,17 @@
             .dropdown-content {
                 columns: 1;
             }
+
+            /* Disable animations and transitions on mobile */
+            a:hover, button:hover, .hamburger-menu:hover {
+                animation: none;
+                cursor: pointer;
+            }
+
+            .carousel div, .btn-call-now, .theatre-availability, .popup-container, .custom-cursor, .hamburger-menu, .search-button {
+                animation: none;
+                transition: none;
+            }
         }
 
         a:hover, button:hover {
@@ -1164,7 +1175,12 @@ button:active {
 
         .popup button:hover {
             background-color: #0c7a6b;
-        }    </style>
+        }
+
+
+
+
+      </style>
 </head>
 <body>
     <div class="custom-cursor"></div>
