@@ -7,7 +7,7 @@
 
     <title>JCL | Home</title>
     <style>
-        /* General reset and basic styles */
+          /* General reset and basic styles */
         * {
             margin: 0;
             padding: 0;
@@ -120,6 +120,55 @@
 
             h1 {
                 font-size: 2rem;
+            }
+
+            .carousel {
+                flex-direction: column;
+            }
+
+            .carousel div {
+                width: 20px;
+                height: 20px;
+                margin: 0.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navigation-links {
+                flex-direction: column;
+                margin-top: 1rem;
+            }
+
+            .search-container {
+                width: 100%;
+                text-align: center;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .search-button {
+                width: 100%;
+            }
+
+            .logos img {
+                width: 60px;
+                margin: 0.5rem;
+            }
+
+            .dropdown-content {
+                columns: 1;
             }
         }
 
@@ -1115,12 +1164,7 @@ button:active {
 
         .popup button:hover {
             background-color: #0c7a6b;
-        }
-
-
-
-
-    </style>
+        }    </style>
 </head>
 <body>
     <div class="custom-cursor"></div>
