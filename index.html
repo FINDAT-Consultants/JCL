@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <title>JCL | Home</title>
@@ -1165,6 +1166,345 @@ button:active {
         .popup button:hover {
             background-color: #0c7a6b;
         }
+
+        /* General reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #111;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('Images/Board_Room.jpg') repeat-x top left/cover;
+    padding: 1rem 0;
+    animation: zoomBackground 30s linear infinite alternate;
+}
+
+nav {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.social-media {
+    display: flex;
+    margin-bottom: 0.5rem;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+    display: inline-block;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.search-button {
+    background-color: #128c7e;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0c7a6b;
+}
+
+.trusted-statement {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.logos img {
+    width: 80px;
+    margin: 0 5px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-out;
+    color: #fff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, 1px 1px 0 #000, -1px 1px 0 #000, 0px 1px 0 #000, 1px 0px 0 #000, 0px -1px 0 #000, -1px 0px 0 #000;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.carousel div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 5px;
+}
+
+.btn-call-now {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(18, 140, 126, 0.4);
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.btn-call-now::before, .btn-call-now::after {
+    content: '|';
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn-call-now::before {
+    left: -10px;
+}
+
+.btn-call-now::after {
+    right: -10px;
+}
+
+.btn-call-now:hover {
+    background: rgba(18, 140, 126, 0.7);
+    color: #ffa10a;
+}
+
+.btn-call-now:hover::before, .btn-call-now:hover::after {
+    color: #ffa10a;
+}
+
+.btn-call-now i {
+    margin-right: 0.5rem;
+}
+
+.theatre-availability {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    color: red;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter form {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.newsletter label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.newsletter input[type="text"], .newsletter input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #333;
+    border: none;
+    color: #fff;
+}
+
+.newsletter button {
+    background-color: #128C7E;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navigation-links {
+        flex-direction: column;
+    }
+
+    .logos img {
+        width: 60px;
+        margin: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .carousel {
+        flex-direction: column;
+    }
+
+    .carousel div {
+        width: 20px;
+        height: 20px;
+        margin: 0.5rem 0;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-input {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .logos img {
+        width: 50px;
+        margin: 0.3rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .btn-call-now {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .newsletter form {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .carousel div {
+        width: 15px;
+        height: 15px;
+        margin: 0.3rem 0;
+    }
+}
+
 
     </style>
 </head>
