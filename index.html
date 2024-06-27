@@ -1961,6 +1961,74 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function toggleDropdown(event) {
+            // Prevent default action
+            event.preventDefault();
+
+            // Close all dropdowns first
+            closeAllDropdowns();
+
+            // Get the dropdown content associated with this button
+            var content = this.nextElementSibling;
+
+            // Toggle the display of the dropdown content
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        }
+
+        // Function to close all dropdowns
+        function closeAllDropdowns() {
+            var dropdownContents = document.getElementsByClassName('dropdown-content');
+            for (var i = 0; i < dropdownContents.length; i++) {
+                dropdownContents[i].style.display = 'none';
+            }
+        }
+
+        // Function to initialize dropdown behavior
+        function initializeDropdowns() {
+            var dropdownButtons = document.getElementsByClassName('dropbtn');
+            for (var i = 0; i < dropdownButtons.length; i++) {
+                // Remove existing event listeners to avoid duplicates
+                dropdownButtons[i].removeEventListener('click', toggleDropdown);
+                dropdownButtons[i].removeEventListener('mouseover', toggleDropdown);
+
+                // Add click event listener
+                dropdownButtons[i].addEventListener('click', toggleDropdown);
+            }
+
+            // Close dropdowns when clicking outside
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                    closeAllDropdowns();
+                }
+            };
+        }
+
+        // Media query to check for mobile view
+        var mediaQuery = window.matchMedia('(max-width: 768px)');
+        
+        // If in mobile view, initialize dropdowns to toggle on click
+        if (mediaQuery.matches) {
+            initializeDropdowns();
+        }
+
+        // Add listener for screen resize to re-initialize if needed
+        mediaQuery.addListener(function(e) {
+            if (e.matches) {
+                initializeDropdowns();
+            } else {
+                closeAllDropdowns();
+                // Re-initialize hover behavior for desktop view if needed
+            }
+        });
+    });
+</script>
+
 
 
     
