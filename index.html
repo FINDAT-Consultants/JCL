@@ -2012,14 +2012,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Media query to check for mobile view
         var mediaQuery = window.matchMedia('(max-width: 768px)');
         
-        // If in mobile view, initialize dropdowns to toggle on click
+        // If in mobile view, initialize dropdowns to toggle on click and keep closed initially
         if (mediaQuery.matches) {
+            closeAllDropdowns(); // Ensure dropdowns are closed initially
             initializeDropdowns();
         }
 
         // Add listener for screen resize to re-initialize if needed
         mediaQuery.addListener(function(e) {
             if (e.matches) {
+                closeAllDropdowns(); // Ensure dropdowns are closed initially
                 initializeDropdowns();
             } else {
                 closeAllDropdowns();
@@ -2028,6 +2030,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 </script>
+
+
 
 
 
